@@ -1,0 +1,27 @@
+{% capture sub_nav %}
+  {% for my_page in site.pages %}
+    {% if my_page.layout == page.menu %}
+      {% if my_page.title %}
+
+        {% comment %}<!-- HANDLE CURRENT PAGE CLASS CHANGE -->{% endcomment %}
+        {% assign current_link_classnames = 'black hover-bg-light-green' %}
+        {% if page.url == my_page.url %}
+          {% assign current_link_classnames = 'black bg-light-green hover-bg-dark-green' %}
+        {% endif %}
+
+        <a
+          class="b f6 f5-l link bg-animate {{current_link_classnames}} dib pa0 ph1-l"
+          href="{{ my_page.url | relative_url }}">
+          {{ my_page.title | escape }}
+        </a>
+
+      {% endif %}
+    {% endif %}
+  {% endfor %}
+{% endcapture %}
+
+{% if sub_nav contains 'a' %}
+  <nav class="bb tc">
+    {{ sub_nav }}
+  </nav>
+{% endif %}

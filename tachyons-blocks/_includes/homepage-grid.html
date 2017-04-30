@@ -1,0 +1,26 @@
+
+<article class="mv5">
+  <h2 class="f3 fw4 pa3 tc mt2">HOW CAN WE HELP YOU?</h2>
+  <div class="cf pa2">
+    {% for my_page in site.pages %}
+      {% if my_page.homepage %}
+      <div class="fl w-100 w-50-m w-33-l pa4">
+
+        <a href="{{ my_page.url | relative_url }}" class="db link dim tc">
+          <img
+            src="http://is4.mzstatic.com/image/thumb/Music62/v4/93/8f/75/938f7536-0188-f9ba-4585-0a77ceaebf0a/source/400x40000bb.png"
+            alt="{{ my_page.title | escape }}"
+            class="w-50 center db outline black-10"
+          />
+          <h2 class="f5 f4-m f3-l fw2 black-50 mt0 lh-copy">{{ my_page.title | escape }}</h2>
+        </a>
+
+        {% assign url = my_page.url | relative_url %}
+        {% capture color %}{% cycle 'grey', 'blue', 'black', 'green', 'red', 'yellow' %}{% endcapture %}
+        {% include button.html color=color href=url label="Learn More" %}
+
+      </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+</article>

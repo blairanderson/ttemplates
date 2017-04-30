@@ -1,0 +1,10 @@
+<div class="mb4-l cf center">
+  {% for location in site.locations %}
+    <article class="fl w-25 tc">
+      <h4 class="f5 f4-l fw6">{{location["title"]}}</h4>
+      <span class="f7 f6-l db black-70">{{location["street"]}}</span>
+      <span class="f7 f6-l black-70">{{location["city_state_zip"]}}</span>
+      <a class="f6 db fw6 pv3 black-70 link dim" title="Call SF" href="tel:+{{location['phone']}}">{{location["phone"]}}</a>
+    </article>
+  {% endfor %}
+</div>

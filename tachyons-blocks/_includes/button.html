@@ -1,0 +1,39 @@
+<!-- theme: (grey, blue)  -->
+<!-- href: (the-link.html)  -->
+<!-- label: (the text)  -->
+
+{% case include.size %}
+{% when 'small' %}
+  {% assign size = '' %}
+{% when 'medium' %}
+  {% assign size = '' %}
+{% when 'large' %}
+  {% assign size = '' %}
+{% else %}
+  {% assign size = 'f4 ba bw1  pv1 db br2' %}
+{% endcase %}
+
+{% case include.color %}
+{% when 'grey', 'gray' %}
+<!-- background/border/text, hover:background,text -->
+  {% assign color = 'bg-gray b--gray white hover-bg-white hover-gray' %}
+{% when 'black' %}
+<!-- background/border/text, hover:background,text -->
+  {% assign color = 'bg-black b--black white hover-bg-white hover-black' %}
+{% when 'red' %}
+<!-- background/border/text, hover:background,text -->
+  {% assign color = 'bg-red b--red white hover-bg-white hover-red' %}
+{% when 'yellow' %}
+<!-- background/border/text, hover:background,text -->
+  {% assign color = 'bg-yellow b--yellow black hover-bg-white hover-yellow' %}
+{% when 'green' %}
+<!-- background/border/text, hover:background,text -->
+  {% assign color = 'bg-green b--green white hover-bg-white hover-green' %}
+{% else %}
+<!-- background/border/text, hover:background,text -->
+  {% assign color = 'bg-dark-blue b--dark-blue white hover-bg-white hover-dark-blue' %}
+{% endcase %}
+
+<a class="link tc w-80 center ph3 bg-animate {{ color }} {{ size }}" href="{{ include.href }}">
+  {{ include.label }}
+</a>

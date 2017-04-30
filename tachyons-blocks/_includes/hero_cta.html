@@ -1,0 +1,22 @@
+{% if site.homepage_header %}
+  {% capture bgimage %}{{ site.homepage_header }}{% endcapture %}
+{% else %}
+  {% capture bgimage %}http://mrmrs.io/photos/u/011.jpg{% endcapture %}
+{% endif %}
+
+{% if site.cta.email %}
+  {% capture href %}mailto:{{site.cta.email}}{% endcapture %}
+{% else if site.cta.href %}
+  {% capture href %}{{site.cta.href}}{% endcapture %}
+{% endif %}
+
+<div class="cover bg-left bg-center-l" style="background-image: url({{bgimage}})">
+  <div class="bg-black-20 pt3 pt4-m pt5-l pb4 pb5-m pb6-l">
+    <div class="tc-l ph3 dt w-100 mw8 center">
+      <h1 class="f3 f2-l fw6 white lh-title">{{site.headline}}</h1>
+      <a href="{{href}}" class="f3 no-underline grow dib v-mid white br2 ba b--white ph3 pv2 mb3">
+        {{site.cta.text}}
+      </a>
+    </div>
+  </div>
+</div>

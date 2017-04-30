@@ -1,0 +1,36 @@
+title: Your Example Sitle
+subtitle: Your awsome subtitle
+headline: Your company headline
+homepage_header: /img/background-blue.png
+email: youremail@example.com
+cta:
+  text: Book An Appointment(config.cta.text)
+  # email: config.cta.email@example.com
+  href: /somepage
+description: > # this means to ignore newlines until "baseurl:"
+  Write an awesome description for your new site here. You can edit this
+  line in _config.yml. It will appear in your document head meta (for
+  Google search results) and in your feed.xml site description.
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "" # the base hostname & protocol for your site, e.g. http://example.com
+twitter_username: jekyllrb
+github_username:  jekyll
+
+locations:
+  - title: "SF"
+    street: '837 Larkin St.'
+    city_state_zip: 'San Francisco, CA 94109'
+    phone: '+1 207-555-5555'
+  - title: "LA"
+    street: '1111 Manor Way'
+    city_state_zip: 'Los Angeles, CA 90048'
+    phone: '+1 323-555-5555'
+
+# Build settings
+markdown: kramdown
+theme: tachyons-blocks
+gems:
+  - jekyll-feed
+exclude:
+  - Gemfile
+  - Gemfile.lock

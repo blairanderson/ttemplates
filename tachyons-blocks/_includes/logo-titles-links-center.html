@@ -1,0 +1,29 @@
+<header class="bg-white black-80 tc pt3 avenir">
+  {% if site.title %}
+    <a class="link no-underline black" href="/"><h1 class="mt2 mb0 baskerville i fw1 f1">{{site.title}}</h1></a>
+  {% endif %}
+  {% if site.subtitle %}
+    <a class="link no-underline black" href="/"><h2 class="mt2 mb0 f6 fw4 ttu tracked">{{site.subtitle}}</h2></a>
+  {% endif %}
+  <nav class="bt bb tc mt3">
+    {% for my_page in site.pages %}
+      {% if my_page.layout == "page" %}
+        {% if my_page.title %}
+
+          {% comment %}<!-- HANDLE CURRENT PAGE CLASS CHANGE -->{% endcomment %}
+          {% assign current_link_classnames = 'black hover-bg-light-green' %}
+          {% if page.url == my_page.url %}
+            {% assign current_link_classnames = 'black bg-light-green hover-bg-dark-green' %}
+          {% endif %}
+          <a
+            class="b f6 f5-l link bg-animate {{current_link_classnames}} dib pa1 pa2-m pa3-l ph4-l"
+            href="{{ my_page.url | relative_url }}" >
+            {{ my_page.title | escape }}
+          </a>
+        {% endif %}
+      {% endif %}
+    {% endfor %}
+  </nav>
+
+  {% include sub-nav-links-center.html %}
+</header>

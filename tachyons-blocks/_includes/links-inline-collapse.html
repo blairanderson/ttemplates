@@ -1,0 +1,19 @@
+<nav class="db bb dt-l w-100 border-box pa3 ph5-l">
+  {% if site.title %}
+    <a class="db dtc-l v-mid mid-gray link dim w-100 w-40-l tc tl-l mb2 mb0-l baskerville i fw1 f1" href="/" title="Home">
+      {{site.title}}
+    </a>
+  {% endif %}
+
+  <div class="db dtc-l v-mid w-100 w-60-l tc tr-l">
+    {% for my_page in site.pages %}
+      {% if my_page.layout == "page" %}
+        {% if my_page.title %}
+          <a class="link dim dark-gray f6 f5-l dib mr1 mr2-m mr3-l mr4-l" href="{{ my_page.url | relative_url }}" >{{ my_page.title | escape }}</a>
+        {% endif %}
+      {% endif %}
+    {% endfor %}
+  </div>
+</nav>
+
+{% include sub-nav-links-center.html %}
